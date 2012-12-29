@@ -3,6 +3,7 @@ package net.gauragangur.EnderChat;
 import java.util.logging.Logger;
 
 import net.gauragangur.EnderChat.Commands.PmCommand;
+import net.gauragangur.EnderChat.Commands.ReplyCommand;
 import net.gauragangur.EnderChat.Events.ChatEvent;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.permission.Permission;
@@ -41,6 +42,8 @@ public class EnderChat extends JavaPlugin {
 			//Regisering the chatEvent
 			pm.registerEvents(chate, this);
 			this.getCommand("tell").setExecutor(new PmCommand(this));
+			this.getCommand("r").setExecutor(new ReplyCommand(this));
+
 		}
 
 

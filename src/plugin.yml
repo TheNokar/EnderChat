@@ -10,3 +10,5 @@ permissions:
 commands:
   tell:
      usages: /tell <player> <msg>
+  r:
+     usages: /r <msg>
