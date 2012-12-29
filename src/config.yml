@@ -1,1 +1,3 @@
 msg-format: '{suffix}<{prefix}{name}{suffix}> &f{msg}'
+private-message:
+    receive-msg: '{prefix}{sender} &7-> {prefix-receiver}{name}&f: {msg}'

@@ -2,6 +2,7 @@ package net.gauragangur.EnderChat;
 
 import java.util.logging.Logger;
 
+import net.gauragangur.EnderChat.Commands.PmCommand;
 import net.gauragangur.EnderChat.Events.ChatEvent;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.permission.Permission;
@@ -29,7 +30,7 @@ public class EnderChat extends JavaPlugin {
 
 		//Setting up vault
 		if (getServer().getPluginManager().getPlugin("Vault") == null) {
-			console.sendMessage(ChatColor.RED + "[EnderChat] Vault not found disabling the plugin!!");
+			console.sendMessage(ChatColor.RED + "[EnderChat] did not find vault, disabling the EnderChat!");
 			getServer().getPluginManager().disablePlugin(this);
 		} else {
 			//Tell the console that vault is installed
@@ -39,6 +40,7 @@ public class EnderChat extends JavaPlugin {
 			this.setupPermissions();
 			//Regisering the chatEvent
 			pm.registerEvents(chate, this);
+			this.getCommand("tell").setExecutor(new PmCommand(this));
 		}
 
 

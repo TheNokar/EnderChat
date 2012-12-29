@@ -3,3 +3,10 @@ main: net.gauragangur.EnderChat.EnderChat
 version: 0.3
 author: TheNokar
 description: EnderChat easy chat plugin
+permissions:
+  enderchat.color:
+     description: Color
+     default: op
+commands:
+  tell:
+     usages: /tell <player> <msg>

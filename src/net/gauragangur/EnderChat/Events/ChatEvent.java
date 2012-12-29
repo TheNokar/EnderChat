@@ -1,5 +1,8 @@
 package net.gauragangur.EnderChat.Events;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import net.gauragangur.EnderChat.EnderChat;
 
 import org.bukkit.ChatColor;
@@ -35,14 +38,19 @@ public class ChatEvent implements Listener {
 				.replace("{suffix}", getSuffix(pname))
 				.replace("{world}", pname.getWorld().getName())
 				.replace("{group}", getGroup(pname))
-				.replace("&", "§");
+				.replaceAll("\u00A7c", "");
+        Matcher matcher = Pattern.compile("\\{color.[a-zA-Z]+\\}").matcher(format);
+		if(pname.hasPermission("enderchat.color")) {
+			format = format.replaceAll("&((?i)[0-9a-fk-or])", "\u00A7$1");
+		}
+				
 		event.setFormat(format);
 	}
 	
-    public String setColor(String string) {
+    public static String setColor(String string) {
     	return ChatColor.translateAlternateColorCodes('&', string);
     }
-    public String getPrefix(Player player) {
+    public static String getPrefix(Player player) {
     	return setColor(EnderChat.chat.getPlayerPrefix(player));
     }
     public String getSuffix(Player player) {
