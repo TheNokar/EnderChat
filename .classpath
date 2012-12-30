@@ -3,9 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Users/Marel/Desktop/test/craftbukkit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Marel/Desktop/PermissionsEx.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Marel/Desktop/PermissionsBukkit-2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Marel/Desktop/EssentialsGroupManager.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Marel/Desktop/Vault.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
