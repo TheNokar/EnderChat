@@ -1,6 +1,6 @@
 name: EnderChat
 main: net.gauragangur.EnderChat.EnderChat
-version: 0.3
+version: 0.1
 author: TheNokar
 description: EnderChat easy chat plugin
 depend: [Vault]
