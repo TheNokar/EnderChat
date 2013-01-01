@@ -3,6 +3,7 @@ main: net.gauragangur.EnderChat.EnderChat
 version: 0.3
 author: TheNokar
 description: EnderChat easy chat plugin
+depend: [Vault]
 permissions:
   enderchat.color:
      description: Color

@@ -15,6 +15,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.massivecraft.factions.Factions;
+
 
 public class EnderChat extends JavaPlugin {
 	
@@ -22,7 +24,7 @@ public class EnderChat extends JavaPlugin {
 	public final ChatEvent chate = new ChatEvent(this);
 	public static Permission perms = null;
 	public static Chat chat = null;
-	
+	public static Factions faction;
 	
 	public void onEnable() {	
 		ConsoleCommandSender console = getServer().getConsoleSender();
@@ -40,6 +42,7 @@ public class EnderChat extends JavaPlugin {
 			this.setupChat();
 			this.setupPermissions();
 			//Regisering the chatEvent
+			getServer().getPluginManager().getPlugin("Factions");
 			pm.registerEvents(chate, this);
 			this.getCommand("tell").setExecutor(new PmCommand(this));
 			this.getCommand("r").setExecutor(new ReplyCommand(this));

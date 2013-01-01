@@ -3,8 +3,12 @@ package net.gauragangur.EnderChat;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import com.massivecraft.factions.FPlayer;
+import com.massivecraft.factions.FPlayers;
+
 public class Methods {
 	public static String Format(String format, String msg, Player player, Player name) {
+		FPlayer me = FPlayers.i.get(player);
 		format = format
 				.replace("{sender}", player.getName())
 				.replace("{name}", name.getName())
@@ -13,6 +17,7 @@ public class Methods {
 				.replace("{suffix}", getSuffix(player))
 				.replace("{world}", player.getWorld().getName())
 				.replace("{group}", getGroup(player))
+				.replace("{faction}", me.getNameAndTag())
 				.replace("{prefix-receiver}", getPrefix(name))
 				.replaceAll("&", "§");
 		return format;
